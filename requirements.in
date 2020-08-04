@@ -1,0 +1,11 @@
+# .env
+python-dotenv
+
+# app
+fastapi
+uvicorn
+ujson
+email_validator
+python-multipart
+motor
+aiofiles
