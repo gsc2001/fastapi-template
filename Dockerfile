@@ -14,5 +14,5 @@ RUN pip-compile requirements.in > requirements.txt \
 
 COPY . /app
 EXPOSE 5000
-ENTRYPOINT ["uvicorn", "--host", "0.0.0.0", "--port", "5000", "--reload", "main:app"]
+ENTRYPOINT ["uvicorn", "--host", "0.0.0.0", "--port", "5000", "--reload", "main:app", "--root-path", "/api"]
 
