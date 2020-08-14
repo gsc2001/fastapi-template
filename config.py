@@ -16,4 +16,4 @@ ALLOWED_HOSTS = [
     "*",
 ]
 
-SECRET_KEY = Secret(os.getenv('SECRET_KEY', 'app_secret'))
+SECRET_KEY = str(Secret(os.getenv('SECRET_KEY', 'app_secret')))

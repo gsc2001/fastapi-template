@@ -9,3 +9,5 @@ email_validator
 python-multipart
 motor
 aiofiles
+python-jose[cryptography]
+passlib[bcrypt]

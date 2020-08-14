@@ -16,3 +16,8 @@ class UserInResponse(ResponseBase):
 
 class UsersInResponse(ResponseBase):
     data: List[User] = list()
+
+
+class TokenResponse(Base):
+    access_token: str
+    token_type: str = 'bearer'
