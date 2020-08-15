@@ -42,13 +42,18 @@ async def verify_token(security_scopes: SecurityScopes, token: str = Depends(oau
         headers={
             'WWW-Authenticate': authenticate_value})
     try:
+        print(token)
+        print(SECRET_KEY)
         payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        print(payload)
         user_id: str = payload.get('sub')
         if user_id is None:
             raise credential_exception
         token_scopes = payload.get('scopes', [])
         token_data = TokenData(user_id=user_id, scopes=token_scopes)
-    except (JWTError, ValueError):
+
+    except (JWTError, ValueError) as e:
+        print(e)
         raise credential_exception
     for scope in security_scopes.scopes:
         if scope not in token_data.scopes:

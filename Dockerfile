@@ -4,6 +4,7 @@ LABEL author=gsc2001 version=1.0
 RUN pip3 install pip-tools \
     && apk add --update build-base \ 
     libxml2-dev libxslt-dev \
+    libffi-dev openssl-dev \
     && rm -rf /var/cache/apk/*
 
 WORKDIR /app
