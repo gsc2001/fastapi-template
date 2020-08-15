@@ -5,7 +5,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from ..utils.mongodb import get_database
 from ..utils.authentication import *
 from ..models.responses import UsersInResponse, UserInResponse, TokenResponse
-from ..models.user import UserInDB, RegisterUser, TokenData
+from ..models.user import UserInDB, UserInReq, TokenData
 
 
 router = APIRouter()
@@ -42,7 +42,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends(), db: AsyncIOMot
 
 
 @router.post('/register', response_model=TokenResponse)
-async def register(_user: RegisterUser, db: AsyncIOMotorClient = Depends(get_database)) -> TokenResponse:
+async def register(_user: UserInReq, db: AsyncIOMotorClient = Depends(get_database)) -> TokenResponse:
     """Register User"""
     existing_user = await db['core']['users'].find_one({'username': _user.username})
     if existing_user:

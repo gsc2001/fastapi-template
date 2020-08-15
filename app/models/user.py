@@ -1,3 +1,4 @@
+from enum import IntEnum
 from typing import List
 
 from pydantic import Field, validator
@@ -5,19 +6,20 @@ from pydantic import Field, validator
 from .base import Base, ObjectID
 
 
-class User(Base):
-    id: ObjectID = Field(None, alias="_id")
+class UserBase(Base):
     name: str
     username: str
+
+
+class User(UserBase):
+    id: ObjectID = Field(None, alias="_id")
 
 
 class UserInDB(User):
     hashed_password: str
 
 
-class RegisterUser(Base):
-    name: str
-    username: str
+class UserInReq(UserBase):
     password: str
 
     @validator('password')
