@@ -14,7 +14,7 @@ cffi==1.14.1
     #   cryptography
 click==7.1.2
     # via uvicorn
-cryptography==3.2
+cryptography==3.3.2
     # via python-jose
 dnspython==2.0.0
     # via email-validator
