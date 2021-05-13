@@ -40,7 +40,7 @@ pyasn1==0.4.8
     #   rsa
 pycparser==2.20
     # via cffi
-pydantic==1.6.1
+pydantic==1.6.2
     # via fastapi
 pymongo==3.11.0
     # via motor
