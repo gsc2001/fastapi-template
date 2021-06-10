@@ -22,7 +22,7 @@ ecdsa==0.14.1
     # via python-jose
 email-validator==1.1.1
     # via -r requirements.in
-fastapi==0.61.0
+fastapi==0.65.2
     # via -r requirements.in
 h11==0.9.0
     # via uvicorn
@@ -40,7 +40,7 @@ pyasn1==0.4.8
     #   rsa
 pycparser==2.20
     # via cffi
-pydantic==1.6.1
+pydantic==1.8.2
     # via fastapi
 pymongo==3.11.0
     # via motor
@@ -59,8 +59,10 @@ six==1.15.0
     #   ecdsa
     #   python-jose
     #   python-multipart
-starlette==0.13.6
+starlette==0.14.2
     # via fastapi
+typing-extensions==3.10.0.0
+    # via pydantic
 ujson==3.1.0
     # via -r requirements.in
 uvicorn==0.11.8
