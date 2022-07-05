@@ -61,7 +61,7 @@ six==1.15.0
     #   python-multipart
 starlette==0.13.6
     # via fastapi
-ujson==3.1.0
+ujson==5.4.0
     # via -r requirements.in
 uvicorn==0.11.8
     # via -r requirements.in
